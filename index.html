@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastro dos Otários</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Otários</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,23 +11,23 @@
     <h2>Preencha aí se for capaz... 🤡</h2>
     
     <form id="badForm">
+      <!-- Campo Nome -->
       <label for="nome">Nome do iludido:</label>
       <input type="text" id="nome" placeholder="Coloca teu nome aqui, mané">
 
+      <!-- Campo Senha -->
       <label for="senha">Senha secreta (se você souber criar):</label>
       <input type="password" id="senha" placeholder="Digita qualquer besteira">
 
-      <small id="senhaDica">Dica: Se errar, nem adianta chorar no suporte.</small>
+      <!-- Botão Falso: Parece o botão principal, mas apaga tudo -->
+      <button id="btnCancelar" type="button" class="btn-cancelar">CONFIRMAR E AVANÇAR</button>
 
-      <!-- O botão verde na verdade zera tudo -->
-      <button id="btnCancelar" class="btn-cancelar">CONFIRMAR E AVANÇAR</button>
-
-      <!-- A mensagem de deboche -->
+      <!-- Div de Mensagem: Escondida até o clique -->
       <div id="mensagem" class="sucesso-falso hidden"></div>
 
-      <!-- O botão real escondido -->
+      <!-- Botão Real: Escondido em formato de link discreto no rodapé -->
       <div class="rodape-escondido">
-        <a href="#" id="btnAvancar">Cancelar operação</a>
+        <a href="#" id="btnAvancar">Avançar para a próxima etapa</a>
       </div>
     </form>
   </div>

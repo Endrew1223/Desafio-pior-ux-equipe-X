@@ -3,30 +3,37 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnCancelar = document.getElementById('btnCancelar');
   const mensagem = document.getElementById('mensagem');
 
-  // Ação do botão "Avançar" escondido lá embaixo
-  btnAvancar.addEventListener('click', function (e) {
-    e.preventDefault();
+  // Lógica do botão escondido (Avançar Real)
+  if (btnAvancar) {
+    btnAvancar.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    const nome = document.getElementById('nome').value;
-    const senha = document.getElementById('senha').value;
+      const nome = document.getElementById('nome').value;
+      const senha = document.getElementById('senha').value;
 
-    if (!nome || !senha) {
-      alert('Preenche o negócio direito, mano! Ficou cego?');
-      return;
-    }
+      // Validação básica de preenchimento
+      if (!nome || !senha) {
+        alert('Preenche o negócio direito, mano! Ficou cego?');
+        return;
+      }
 
-    // Feedback deboche puro
-    mensagem.textContent = 'Achou mesmo que ia cadastrar? Caiu no papo de trouxa! 🤣';
-    mensagem.classList.remove('hidden');
-    mensagem.style.display = 'block';
-  });
+      // Exibe mensagem provocativa na tela
+      mensagem.textContent = 'Achou mesmo que ia cadastrar? Caiu no papo de trouxa! 🤣';
+      mensagem.classList.remove('hidden');
+      mensagem.style.display = 'block';
+    });
+  }
 
-  // Ação do botão verde chamativo "CANCELAR TUDO"
+  // Lógica do botão principal (Sabotagem)
   if (btnCancelar) {
     btnCancelar.addEventListener('click', function (e) {
       e.preventDefault();
+      
+      // Limpa os dados do formulário
       document.getElementById('nome').value = '';
       document.getElementById('senha').value = '';
+      
+      // Exibe o alerta debochado
       alert('Apertou o botão verde achando que ia salvar, né? Perdeu tudo, vacilão! 🤡');
     });
   }
