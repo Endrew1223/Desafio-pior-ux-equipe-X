@@ -1,37 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Otários</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAE OTÁRIO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="card">
-    <h2>Preencha aí se for capaz... 🤡</h2>
-    
-    <form id="badForm">
-      <!-- Campo Nome -->
-      <label for="nome">Nome do iludido:</label>
-      <input type="text" id="nome" placeholder="Coloca teu nome aqui, mané">
 
-      <!-- Campo Senha -->
-      <label for="senha">Senha secreta (se você souber criar):</label>
-      <input type="password" id="senha" placeholder="Digita qualquer besteira">
+    <main class="container">
 
-      <!-- Botão Falso: Parece o botão principal, mas apaga tudo -->
-      <button id="btnCancelar" type="button" class="btn-cancelar">CONFIRMAR E AVANÇAR</button>
+        <!-- TELA 1 -->
+        <section id="tela1" class="tela ativa">
+            <h1>EAE OTÁRIO 👋</h1>
 
-      <!-- Div de Mensagem: Escondida até o clique -->
-      <div id="mensagem" class="sucesso-falso hidden"></div>
+            <p>Parabéns por ter acessado o pior site da internet.</p>
+            <p>Agora que você chegou aqui, não tem mais volta.</p>
 
-      <!-- Botão Real: Escondido em formato de link discreto no rodapé -->
-      <div class="rodape-escondido">
-        <a href="#" id="btnAvancar">Avançar para a próxima etapa</a>
-      </div>
-    </form>
-  </div>
+            <div class="caixa">
+                <h2>Deseja continuar?</h2>
 
-  <script src="script.js"></script>
+                <button class="cancelar" onclick="cancelar()">CANCELAR E CONTINUAR</button>
+
+                <button class="continuar" onclick="proximaTela(2)">
+                    Continuar
+                </button>
+            </div>
+        </section>
+
+
+        <!-- TELA 2 -->
+        <section id="tela2" class="tela">
+
+            <h1>CADASTRO COMPLETAMENTE NECESSÁRIO</h1>
+
+            <p>Precisamos de algumas informações que provavelmente não precisávamos.</p>
+
+            <form id="formulario">
+
+                <label>Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+
+                <label>E-mail:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail">
+
+                <label>Senha:</label>
+                <input type="password" id="senha" placeholder="Digite sua senha">
+
+                <small>
+                    A senha deve possuir 8 a 12 caracteres,
+                    número, símbolo, emoji, letra maiúscula,
+                    letra minúscula e não pode possuir letra maiúscula.
+                </small>
+
+                <p id="mensagem"></p>
+
+                <button type="button" onclick="validar()">
+                    AVANÇAR
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- TELA 3 -->
+        <section id="tela3" class="tela">
+
+            <h1>QUASE LÁ, GUERREIRO 🫡</h1>
+
+            <p>Agora só falta confirmar algumas coisas.</p>
+
+            <div class="termos">
+
+                <input type="checkbox" id="termos">
+
+                <label for="termos">
+                    Eu li e concordo com os
+                    <a href="#" onclick="termos()">termos que eu não vou ler</a>.
+                </label>
+
+            </div>
+
+            <button onclick="confirmar()">CONFIRMAR</button>
+
+            <button class="voltar" onclick="proximaTela(2)">
+                Voltar
+            </button>
+
+        </section>
+
+
+        <!-- TELA FINAL -->
+        <section id="final" class="tela">
+
+            <h1>🎉 PARABÉNS, OTÁRIO!</h1>
+
+            <p class="grande">
+                Você conseguiu completar a pior experiência
+                de usuário possível.
+            </p>
+
+            <div class="resultado">
+
+                <p>⏱️ Tempo perdido: <strong>4 minutos e 37 segundos</strong></p>
+
+                <p>🧠 Paciência restante: <strong>0%</strong></p>
+
+                <p>⭐ Vontade de voltar: <strong>0%</strong></p>
+
+            </div>
+
+            <button onclick="sair()">SAIR</button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,76 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f7f7f7;
+    color: #555;
 }
 
-.card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 320px;
-  text-align: center;
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Violação de Contraste: Textos em cinza muito claro */
-h2, label {
-  color: #d1d1d1;
-  display: block;
-  margin-bottom: 8px;
-  text-align: left;
+.tela {
+    display: none;
+
+    min-height: 500px;
+    padding: 40px;
+
+    background: white;
+    border: 2px solid #ddd;
+    box-shadow: 10px 10px 0px #ddd;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  box-sizing: border-box;
+.tela.ativa {
+    display: block;
 }
 
-/* Botão Falso Verde Chamativo */
-.btn-cancelar {
-  width: 100%;
-  padding: 12px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 15px;
+h1 {
+    color: #ff00aa;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.btn-cancelar:hover {
-  background-color: #218838;
+h2 {
+    color: #999;
 }
 
-/* Container de Mensagens */
-.sucesso-falso {
-  padding: 10px;
-  background-color: #dc3545;
-  color: white;
-  border-radius: 6px;
-  margin-bottom: 15px;
+p {
+    line-height: 1.6;
 }
 
-.hidden {
-  display: none;
+.caixa {
+    margin-top: 60px;
+    text-align: center;
 }
 
-/* Botão Real Oculto no Rodapé */
-.rodape-escondido {
-  margin-top: 10px;
+button {
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #999;
+    color: white;
 }
 
-.rodape-escondido a {
-  color: #b0b0b0;
-  font-size: 12px;
-  text-decoration: underline;
+button:hover {
+    transform: rotate(2deg);
+}
+
+.cancelar {
+    background: #00c853;
+}
+
+.continuar {
+    background: #ddd;
+    color: #aaa;
+
+    font-size: 11px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 15px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+}
+
+small {
+    color: #ccc;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+#mensagem {
+    min-height: 30px;
+    font-weight: bold;
+}
+
+.termos {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.termos label {
+    display: inline;
+}
+
+a {
+    color: #eee;
+}
+
+.voltar {
+    background: #222;
+}
+
+.grande {
+    font-size: 20px;
+    text-align: center;
+}
+
+.resultado {
+    background: #eee;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.resultado strong {
+    color: red;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .tela {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    button {
+        width: 90%;
+    }
 }

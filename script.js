@@ -1,40 +1,113 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const btnAvancar = document.getElementById('btnAvancar');
-  const btnCancelar = document.getElementById('btnCancelar');
-  const mensagem = document.getElementById('mensagem');
+function proximaTela(numero) {
 
-  // Lógica do botão escondido (Avançar Real)
-  if (btnAvancar) {
-    btnAvancar.addEventListener('click', function (e) {
-      e.preventDefault();
+    document.querySelectorAll(".tela").forEach(tela => {
+        tela.classList.remove("ativa");
+    });
 
-      const nome = document.getElementById('nome').value;
-      const senha = document.getElementById('senha').value;
+    document.getElementById("tela" + numero).classList.add("ativa");
+}
 
-      // Validação básica de preenchimento
-      if (!nome || !senha) {
-        alert('Preenche o negócio direito, mano! Ficou cego?');
+
+function cancelar() {
+
+    alert("Você escolheu CANCELAR.");
+
+    alert("Mentira.");
+
+    alert("Agora você vai continuar.");
+
+    proximaTela(2);
+}
+
+
+function validar() {
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    const mensagem = document.getElementById("mensagem");
+
+    if (nome === "" || email === "" || senha === "") {
+
+        mensagem.innerText =
+            "❌ Parabéns! Seus dados estão corretos. Mentira, preencha tudo.";
+
+        mensagem.style.color = "red";
+
         return;
-      }
+    }
 
-      // Exibe mensagem provocativa na tela
-      mensagem.textContent = 'Achou mesmo que ia cadastrar? Caiu no papo de trouxa! 🤣';
-      mensagem.classList.remove('hidden');
-      mensagem.style.display = 'block';
-    });
-  }
+    if (senha.length < 8) {
 
-  // Lógica do botão principal (Sabotagem)
-  if (btnCancelar) {
-    btnCancelar.addEventListener('click', function (e) {
-      e.preventDefault();
-      
-      // Limpa os dados do formulário
-      document.getElementById('nome').value = '';
-      document.getElementById('senha').value = '';
-      
-      // Exibe o alerta debochado
-      alert('Apertou o botão verde achando que ia salvar, né? Perdeu tudo, vacilão! 🤡');
-    });
-  }
-});
+        mensagem.innerText =
+            "❌ Senha perfeita! Porém está errada.";
+
+        mensagem.style.color = "red";
+
+        return;
+    }
+
+    mensagem.innerText =
+        "⚠️ Erro desconhecido: sua senha aparentemente está boa demais.";
+
+    mensagem.style.color = "orange";
+
+    setTimeout(() => {
+        proximaTela(3);
+    }, 1500);
+}
+
+
+function termos() {
+
+    alert(
+        "TERMOS DE USO:\n\n" +
+        "1. Você concorda com tudo.\n" +
+        "2. Não pode reclamar.\n" +
+        "3. Se chegou até aqui, já perdeu.\n" +
+        "4. Obrigado por não ler."
+    );
+
+}
+
+
+function confirmar() {
+
+    const checkbox = document.getElementById("termos");
+
+    if (!checkbox.checked) {
+
+        alert(
+            "VOCÊ NÃO LEU OS TERMOS!\n\n" +
+            "Isso era exatamente o que esperávamos."
+        );
+
+        return;
+    }
+
+    alert("Confirmando...");
+
+    setTimeout(() => {
+
+        document.querySelectorAll(".tela").forEach(tela => {
+            tela.classList.remove("ativa");
+        });
+
+        document.getElementById("final").classList.add("ativa");
+
+    }, 1000);
+}
+
+
+function sair() {
+
+    alert("Tem certeza que deseja sair?");
+
+    alert("Pensando...");
+
+    alert("Não.");
+
+    alert("Obrigado por participar 😎");
+
+}
