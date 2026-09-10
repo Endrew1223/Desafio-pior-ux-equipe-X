@@ -1,0 +1,40 @@
+body {
+  background-color: #ffffff;
+  color: #cccccc; /* Pioria: Baixo contraste proposital */
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+/* Pioria: Inversão visual de hierarquia de botões */
+.btn-primario {
+  background-color: #28a745; /* Verde chamativo para AÇÃO DE CANCELAR */
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background-color: #e0e0e0; /* Cinza apagado para O BOTÃO CORRETO DE AVANÇAR */
+  color: #999;
+  border: none;
+  font-size: 10px; /* Pequeno */
+  position: absolute;
+  bottom: 5px; /* Escondido no rodapé */
+}
+
+/* Pioria: Feedback enganoso */
+.sucesso-falso {
+  background-color: #ff4d4d; /* Cor vermelha de erro para mensagem de sucesso */
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+}
