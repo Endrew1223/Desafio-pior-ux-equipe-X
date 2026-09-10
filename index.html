@@ -2,35 +2,33 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro Super Simples</title>
+  <title>Cadastro dos Otários</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Preencha seus dados para continuar</h2>
+  <div class="card">
+    <h2>Preencha aí se for capaz... 🤡</h2>
     
     <form id="badForm">
-      <div class="field-group">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" placeholder="Digite seu nome..." required>
-      </div>
+      <label for="nome">Nome do iludido:</label>
+      <input type="text" id="nome" placeholder="Coloca teu nome aqui, mané">
 
-      <div class="field-group">
-        <label for="senha">Senha Secreta:</label>
-        <input type="password" id="senha" placeholder="Sua senha" required>
-        <small id="senhaDica">Dica: A senha exige um número par e exatamente 1 emoji 😀</small>
-      </div>
+      <label for="senha">Senha secreta (se você souber criar):</label>
+      <input type="password" id="senha" placeholder="Digita qualquer besteira">
 
-      <div class="buttons">
-        <button type="reset" id="btnCancelar" class="btn-primario">CANCELAR TUDO</button>
-      </div>
+      <small id="senhaDica">Dica: Se errar, nem adianta chorar no suporte.</small>
 
-      <!-- O botão real de prosseguir fica escondido como se fosse um detalhe no rodapé -->
-      <button type="button" id="btnAvancar" class="btn-secundario">Avançar para a próxima etapa</button>
+      <!-- O botão verde na verdade zera tudo -->
+      <button id="btnCancelar" class="btn-cancelar">CONFIRMAR E AVANÇAR</button>
+
+      <!-- A mensagem de deboche -->
+      <div id="mensagem" class="sucesso-falso hidden"></div>
+
+      <!-- O botão real escondido -->
+      <div class="rodape-escondido">
+        <a href="#" id="btnAvancar">Cancelar operação</a>
+      </div>
     </form>
-
-    <div id="mensagem" class="hidden"></div>
   </div>
 
   <script src="script.js"></script>
