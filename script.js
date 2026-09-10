@@ -19,4 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
     mensagem.classList.remove('hidden');
     mensagem.classList.add('sucesso-falso');
   });
-});
+}); 
