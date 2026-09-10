@@ -2,27 +2,37 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro Super Simples</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h2>Preencha seus dados para continuar</h2>
+    
     <form id="badForm">
-      <label>Nome Completo:</label>
-      <input type="text" id="nome" placeholder="Digite..." required>
+      <div class="field-group">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome..." required>
+      </div>
 
-      <label>Senha Secreta:</label>
-      <input type="password" id="senha" placeholder="Digite a senha" required>
-      <small id="senhaDica">A senha deve ter um número par e exatamente 1 emoji.</small>
+      <div class="field-group">
+        <label for="senha">Senha Secreta:</label>
+        <input type="password" id="senha" placeholder="Sua senha" required>
+        <small id="senhaDica">Dica: A senha exige um número par e exatamente 1 emoji 😀</small>
+      </div>
 
       <div class="buttons">
-        <button type="button" id="btnAvancar" class="btn-secundario">Avançar</button>
         <button type="reset" id="btnCancelar" class="btn-primario">CANCELAR TUDO</button>
       </div>
+
+      <!-- O botão real de prosseguir fica escondido como se fosse um detalhe no rodapé -->
+      <button type="button" id="btnAvancar" class="btn-secundario">Avançar para a próxima etapa</button>
     </form>
+
     <div id="mensagem" class="hidden"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

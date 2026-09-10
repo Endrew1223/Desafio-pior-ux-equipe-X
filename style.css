@@ -1,40 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #ffffff;
-  color: #cccccc; /* Pioria: Baixo contraste proposital */
-  font-family: sans-serif;
+  background-color: #f4f4f9;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte irritante */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
-  border: 1px solid #eee;
-  padding: 20px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  width: 420px;
+  position: relative;
 }
 
-/* Pioria: Inversão visual de hierarquia de botões */
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #d1d1d1; /* Pioria: Baixo contraste no título */
+  text-align: center;
+}
+
+.field-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.85rem;
+  color: #e0e0e0; /* Pioria: Baixo contraste nos rótulos */
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #ff0055;
+}
+
+small {
+  font-size: 0.7rem;
+  color: #cccccc;
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Pioria: O botão de cancelar parece o botão principal e correto */
 .btn-primario {
-  background-color: #28a745; /* Verde chamativo para AÇÃO DE CANCELAR */
+  background-color: #28a745;
   color: white;
-  padding: 15px 30px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-secundario {
-  background-color: #e0e0e0; /* Cinza apagado para O BOTÃO CORRETO DE AVANÇAR */
-  color: #999;
   border: none;
-  font-size: 10px; /* Pequeno */
-  position: absolute;
-  bottom: 5px; /* Escondido no rodapé */
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-/* Pioria: Feedback enganoso */
+.btn-primario:hover {
+  transform: scale(1.02);
+}
+
+/* Pioria: Botão correto de avançar escondido bem pequeno no rodapé */
+.btn-secundario {
+  background-color: transparent;
+  color: #bbb;
+  border: none;
+  font-size: 0.65rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  text-decoration: underline;
+}
+
 .sucesso-falso {
-  background-color: #ff4d4d; /* Cor vermelha de erro para mensagem de sucesso */
+  background-color: #ff4d4d; /* Banner vermelho para mensagem de 'sucesso' */
   color: white;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 6px;
   margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
 }
